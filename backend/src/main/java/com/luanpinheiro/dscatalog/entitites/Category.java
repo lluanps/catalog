@@ -3,18 +3,28 @@ package com.luanpinheiro.dscatalog.entitites;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_category")
 public class Category implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String Category;
+	private String name;
 	
 	public Category() {
 	}
 
-	public Category(Long id, String category) {
+	public Category(Long id, String name) {
 		this.id = id;
-		Category = category;
+		this.name = name;
 	}
 
 	public Long getId() {
@@ -25,12 +35,12 @@ public class Category implements Serializable{
 		this.id = id;
 	}
 
-	public String getCategory() {
-		return Category;
+	public String getName() {
+		return name;
 	}
 
-	public void setCategory(String category) {
-		Category = category;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override
@@ -49,5 +59,7 @@ public class Category implements Serializable{
 		Category other = (Category) obj;
 		return Objects.equals(id, other.id);
 	}
+
+
 
 }
