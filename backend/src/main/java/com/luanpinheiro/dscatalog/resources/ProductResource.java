@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.luanpinheiro.dscatalog.dto.CategoryDTO;
 import com.luanpinheiro.dscatalog.dto.ProductDTO;
 import com.luanpinheiro.dscatalog.services.ProductService;
 
@@ -63,7 +64,7 @@ public class ProductResource {
 	}
 	
 	@DeleteMapping(value = "/{id}")
-	public ResponseEntity<ProductDTO> delete(@PathVariable Long id) {
+	public ResponseEntity<CategoryDTO> delete(@PathVariable Long id) {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
