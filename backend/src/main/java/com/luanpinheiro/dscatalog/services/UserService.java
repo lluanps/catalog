@@ -32,6 +32,7 @@ public class UserService {
 	@Autowired
 	private UserRepository repository;
 	
+	@Autowired
 	private RoleRepository roleRepository;
 	
 	@Transactional(readOnly = true)

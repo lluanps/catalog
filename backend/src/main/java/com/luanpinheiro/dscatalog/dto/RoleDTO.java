@@ -5,8 +5,8 @@ import java.io.Serializable;
 import com.luanpinheiro.dscatalog.entitites.Role;
 
 public class RoleDTO implements Serializable{
-
 	private static final long serialVersionUID = 1L;
+	
 	private Long id;
 	private String authority;
 	
@@ -18,9 +18,9 @@ public class RoleDTO implements Serializable{
 		this.authority = authority;
 	}
 	
-	public RoleDTO(Role entity) {
-		id = entity.getId();
-		authority = entity.getAuthority();
+	public RoleDTO(Role role) {
+		id = role.getId();
+		authority = role.getAuthority();
 	}
 
 	public Long getId() {
